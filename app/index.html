@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
+<head>
+  <meta name="description" content="">
+  <link rel="stylesheet" href="lib/html5-boilerplate/dist/css/normalize.css">
+  <link rel="stylesheet" href="lib/html5-boilerplate/dist/css/main.css">
+  <link rel="stylesheet" href="app.css">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Deltech Baja</title>
+  <link rel = "icon" href = "Untitled.png" type = "image/x-icon">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0">
+  <!-- <link rel="stylesheet" type="text/css" href="style.css" /> -->
+  <link rel="stylesheet" href="css/animate.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+    crossorigin="anonymous"></script>
+  <!-- <script type="text/javascript" src="mobile.js"></script> -->
+  
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" integrity="sha512-xA6Hp6oezhjd6LiLZynuukm80f8BoZ3OpcEYaqKoCV3HKQDrYjDE1Gu8ocxgxoXmwmSzM4iqPvCsOkQNiu41GA==" crossorigin="anonymous" />
+  <script src="lib/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+  
+</head>
+<body>
+  <!-- <ul class="menu">
+    <li><a href="#!/home">view1</a></li>
+    <li><a href="#!/team">view2</a></li>
+  </ul> -->
+
+  <nav class="navbar navbar-expand-lg navbar-dark navbar-custom shadow-lg ">
+    <a class="navbar-brand text-center brand" href="#">DelTech BAJA</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#!/home">HOME</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#!/team">TEAM</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#!/support">SUPPORT US</a>
+        </li>
+
+
+    </div>
+    <div class="clear"></div>
+  </nav>
+
+  <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+  <![endif]-->
+
+  <div ng-view></div>
+
+  <!-- <div>AngularJS seed app: v<span app-version></span></div> -->
+
+  <!-- In production use:
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
+  -->
+
+  <div class="footer">
+    <h4><p style="padding-top: 25px;">Stay Connected With Us!</p></h4>
+    <a href="https://www.facebook.com/deltechBAJA/"><i class="fab fa-facebook-square fa-2x"></i></a>
+    <a href="https://www.linkedin.com/company/deltechbaja/"><i class="fab fa-linkedin fa-2x"></i></a>
+    <a href="https://www.instagram.com/deltechbaja/"><i class="fab fa-instagram-square fa-2x"></i></a>
+  </div>
+
+
+  <div id="preloader">
+    <div class="p">LOADING</div>
+</div>
+
+<script>
+
+paceOptions = {
+ajax: true,
+document: true,
+eventLag: false
+};
+
+Pace.on('done', function() {
+$('.p').delay(500).animate({top: '30%', opacity: '0'}, 3000, $.bez([0.19,1,0.22,1]));
+
+
+$('#preloader').delay(1500).animate({top: '-100%'}, 2000, $.bez([0.19,1,0.22,1]));
+
+TweenMax.from(".title", 2, {
+     delay: 1.8,
+          y: 10,
+          opacity: 0,
+          ease: Expo.easeInOut
+    })
+});
+
+</script>
+
+
+
+  <script type="text/javascript" src="mobile.js"></script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+   <script>
+     $().on('scroll',AOS.refreshHard);
+   $(function() { AOS.init();
+   });
+   
+  </script>
+  
+  
+  <script src="lib/angular/angular.js"></script>
+  <script src="lib/angular-route/angular-route.js"></script>
+  <script src="app.js"></script>
+  <script src="view1/view1.js"></script>
+  <script src="view2/view2.js"></script>
+  <script src="view3/view3.js"></script>
+  <script src="core/version/version.js"></script>
+  <script src="core/version/version-directive.js"></script>
+  <script src="core/version/interpolate-filter.js"></script>
+  </script>
+</body>
+</html>
